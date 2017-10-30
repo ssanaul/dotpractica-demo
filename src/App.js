@@ -8,17 +8,30 @@ class App extends Component {
 		super(props);
 		
 		this.state = {
-			title: 'Quiz name',
-			problems: [
-				<Problem title="hello world"/>,
-				<Problem title="lorem ipsum"/>
-			],
+			quiz1: {
+				key: 0,
+				title: 'Quiz 1',
+				problems: [
+					<Problem key='0a' title="Problem 1a"/>,
+					<Problem key='0b' title="Problem 1b"/>
+				],
+			},
+			quiz2: {
+				key: 1,
+				title: 'Quiz 2',
+				problems: [
+					<Problem key='1a' title="Problem 2a"/>,
+					<Problem key='1b' title="Problem 2b"/>
+				],
+			}
 		}
 	}
   render() {
     return (
       <div>
-		<Assessment title={this.state.title} problems={this.state.problems}/>
+		<Assessment title={this.state.quiz1.title} problems={this.state.quiz1.problems}/>
+		<br/>
+		<Assessment title={this.state.quiz2.title} problems={this.state.quiz2.problems}/>
       </div>
     );
   }
