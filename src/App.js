@@ -9,75 +9,38 @@ class App extends Component {
 		super(props);
 		
 		this.state = {
-			displays: [
-				<Display 
-					quiz={
-						<Assessment
-							key='0'
-							title='Quiz 1'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>
-					}
-					quizzes={[
-						<Assessment
-							key='0'
-							title='Quiz 1'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>,
-						<Assessment
-							key='1'
-							title='Quiz 2'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>
+			quizzes: [
+				<Assessment
+					key='0'
+					title='Quiz 1'
+					problems={[
+						<Problem key='a' title='What is supply?'/>,
+						<Problem key='b' title='What is demand?'/>,
 					]}
 				/>,
-				<Display 
-					quiz={
-						<Assessment
-							key='1'
-							title='Quiz 2'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>
-					}
-					quizzes={[
-						<Assessment
-							key='0'
-							title='Quiz 1'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>,
-						<Assessment
-							key='1'
-							title='Quiz 2'
-							problems={[
-								<Problem key='a' title='Problem 1a'/>,
-								<Problem key='b' title='Problem 1b'/>,
-							]}
-						/>
+				<Assessment
+					key='1'
+					title='Quiz 2'
+					problems={[
+						<Problem key='a' title='Problem 1a'/>,
+						<Problem key='b' title='Problem 1b'/>,
 					]}
 				/>
-			],	
+			],
 		}
 	}
   render() {
+	var displays = null;
+	var allQuizzes = this.state.quizzes;
+	var generatedDisplays = this.state.quizzes.map(function(q){
+		var display = <Display quiz={q} quizzes={allQuizzes}/>
+		return display
+	})
+	displays = generatedDisplays;
     return (
       <div>
 		{
-			this.state.displays.map(function(d){
+			displays.map(function(d){
 				return <div>
 					{d}
 				</div>

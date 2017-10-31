@@ -4,6 +4,7 @@ class Display extends Component {
   render() {
     return (
       <div style={{width: '100%'}}>
+	  
 		<div style={{width: '40%', display: 'inline-block'}}>
 			{this.props.quiz}
 		</div>
@@ -13,9 +14,16 @@ class Display extends Component {
 			<ul>
 			{
 				this.props.quizzes.map(function(q){
-					return <li>
-						<button>{q.props.title}</button>
-					</li>
+					return <details>
+						<summary>{q.props.title}</summary>
+						{
+							q.props.problems.map(function(p){
+								return <p>
+									{p.props.title}
+								</p>
+							})
+						}
+					</details>
 				})
 			}
 			</ul>
