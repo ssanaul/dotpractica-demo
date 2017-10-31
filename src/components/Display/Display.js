@@ -1,61 +1,53 @@
 import React, { Component } from 'react';
 import { ListItem } from 'material-ui/List';
-import { GridList } from 'material-ui/GridList';
-import { Card, CardTitle, Paper } from 'material-ui';
+import { CardTitle, Paper } from 'material-ui';
+
+import Notes from '../Notes/Notes';
 
 class Display extends Component {
   render() {
     return (
-      <GridList
-		cols={3}
-		cellHeight={700}
-		style={{width: '90%',
-				margin: 'auto',}}
-	  >
-	  
-		<div style={{height: '100%',}}>
-			{this.props.quiz}
-		</div>
-					
-		<Card
-			style={{
-				height: '100%',
-				padding: 20,
-			}}>
-			<CardTitle
-				title='Previous Assessments'
-				style={{ width: 250, margin: 'auto',}}
-			/>
-			<Paper>
-			{
-				this.props.quizzes.map(function(q){
-					return <ListItem
-						primaryText={q.props.title}
-						nestedItems={[
-							q.props.problems.map(function(p){
-								return <ListItem
-									primaryText={p.props.title}
-								/>
-							})
-						]}
-					/>
-				})
-			}
-			</Paper>
-		</Card>
-					
-		<Card
-			style={{
-					height: '100%',
-					padding: 20,
-			}}>
-			<CardTitle 
-				title='Web'
-				style={{ width: 50, margin: 'auto',}}
-			/>
-		</Card>
-		<br/>
-      </GridList>
+      <div style={{width: '90%', margin: 'auto'}}>
+        <div className="row">
+
+      		<div className="col-md-6">
+      			{this.props.quiz}
+      		</div>
+
+      		<div className="col-md-3">
+      			<CardTitle
+      				title='Previous Assessments'
+              style={{textAlign:'center'}}
+      			/>
+      			<Paper>
+      			{
+      				this.props.quizzes.map(function(q){
+      					return <ListItem
+      						primaryText={q.props.title}
+      						nestedItems={[
+      							q.props.problems.map(function(p){
+      								return <ListItem
+      									primaryText={p.props.title}
+      								/>
+      							})
+      						]}
+      					/>
+      				})
+      			}
+      			</Paper>
+      		</div>
+
+          <div className="col-md-3">
+            <CardTitle
+              title="Notes"
+              style={{textAlign:'center'}}/>
+            <Paper>
+              <Notes/>
+            </Paper>
+          </div>
+
+        </div>
+      </div>
     );
   }
 }

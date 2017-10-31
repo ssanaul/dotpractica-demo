@@ -6,10 +6,10 @@ class Solution extends Component {
   render() {
     return (
       <div>
-	  
+
 		<Explanation/>
-		<Answer/>
-		
+		<Answer inputType={this.props.inputType}/>
+
       </div>
     );
   }
