@@ -7,8 +7,10 @@ class Problem extends Component {
     return (
       <div>
 
-        <h2>{this.props.title}</h2>
-		      <Solution inputType={this.props.inputType}/>
+        <h3>{this.props.title}</h3>
+		      <Solution
+            inputType={this.props.inputType}
+            options={this.props.options}/>
 
       </div>
     );

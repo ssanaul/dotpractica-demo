@@ -8,7 +8,10 @@ class Solution extends Component {
       <div>
 
 		<Explanation/>
-		<Answer inputType={this.props.inputType}/>
+
+		<Answer
+      inputType={this.props.inputType}
+      options={this.props.options}/>
 
       </div>
     );

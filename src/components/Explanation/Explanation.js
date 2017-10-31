@@ -13,11 +13,11 @@ class Explanation extends Component {
 
 		this.addInput = this.addInput.bind(this);
 	}
-	
+
 	addInput() {
 		var newIndex = this.state.currentIndex + 1;
 		var updatedExplanations = this.state.explanations;
-		
+
 		var newExplanation = {
 			key: newIndex,
 			el: <div key={newIndex}>
@@ -26,22 +26,22 @@ class Explanation extends Component {
 				</div>,
 		}
 		updatedExplanations.push(newExplanation);
-		
+
 		this.setState({
 			explanations: updatedExplanations,
 			currentIndex: newIndex,
 		});
 	}
-	
+
   render() {
     return (
       <div>
-	  
+
         <p>Explanation:</p>
 		<RaisedButton onClick={this.addInput}>Add</RaisedButton>
 		<br/>
 		<br/>
-		
+
 		<div key="0">
 			<span>1.</span>
 			<TextField/>
@@ -51,7 +51,7 @@ class Explanation extends Component {
 				return e.el
 			})
 		}
-		
+
       </div>
     );
   }

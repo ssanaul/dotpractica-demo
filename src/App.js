@@ -17,7 +17,15 @@ class App extends Component {
 					key='0'
 					title='Key Ideas of Economics'
 					problems={[
-						<Problem key='a' title='What is supply?' inputType='checkbox'/>,
+						<Problem key='a'
+						title='Why do students usually benefit from studying in groups?'
+						inputType='checkbox'
+						options={[
+							'some students are smarter than others',
+							'students have different skills',
+							'only poor students benefit'
+						]}
+					/>,
 						<Problem key='b' title='What is demand?'/>,
 					]}
 				/>,<Assessment

@@ -9,10 +9,11 @@ class Answer extends Component { render() {
         {
           this.props.inputType==='checkbox'?
           <RadioButtonGroup>
-          <RadioButton/>
-          <RadioButton/>
-          <RadioButton/>
-          <RadioButton/>
+          {
+            this.props.options.map(function(p){
+              return <RadioButton value={p} label={p}/>
+            })
+          }
           </RadioButtonGroup>
           :
           <TextField/>
