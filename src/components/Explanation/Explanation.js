@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class Explanation extends Component {
 	constructor(props){
@@ -20,7 +22,7 @@ class Explanation extends Component {
 			key: newIndex,
 			el: <div key={newIndex}>
 					<span>{newIndex+1}.</span>
-					<input/>
+					<TextField/>
 				</div>,
 		}
 		updatedExplanations.push(newExplanation);
@@ -36,13 +38,13 @@ class Explanation extends Component {
       <div>
 	  
         <p>Explanation:</p>
-		<button type="button" onClick={this.addInput}>Add</button>
+		<RaisedButton onClick={this.addInput}>Add</RaisedButton>
 		<br/>
 		<br/>
 		
 		<div key="0">
 			<span>1.</span>
-			<input/>
+			<TextField/>
 		</div>
 		{
 			this.state.explanations.map(function(e){

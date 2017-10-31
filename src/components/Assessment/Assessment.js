@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
+import { Card, CardTitle, Paper } from 'material-ui';
 
 class Assessment extends Component {
   render() {
     return (
-      <div>
+      <Card
+		style={{padding: 20, height: 700}}
+	  >
 	  
-        <h1>{this.props.title}</h1>
+        <CardTitle
+			title={this.props.title}
+			style={{width: 100, margin: 'auto'}}
+		/>
 		
 		<div>
 			{
 				this.props.problems.map(function(p){
-					return p
+					return <Paper
+						zDepth={1}
+						style={{padding: 10, width: '50%', margin: 'auto'}}>
+						{p}
+					</Paper>
 				})
 			}
 		</div>
 		
-      </div>
+      </Card>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Assessment from './components/Assessment/Assessment';
 import Problem from './components/Problem/Problem';
 import Display from './components/Display/Display';
@@ -38,7 +39,7 @@ class App extends Component {
 	})
 	displays = generatedDisplays;
     return (
-      <div>
+      <MuiThemeProvider>
 		{
 			displays.map(function(d){
 				return <div>
@@ -46,7 +47,7 @@ class App extends Component {
 				</div>
 			})
 		}
-      </div>
+      </MuiThemeProvider>
     );
   }
 }
