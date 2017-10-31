@@ -6,8 +6,10 @@ class Problem extends Component {
   render() {
     return (
       <div>
+	  
         <h2>{this.props.title}</h2>
 		<Solution/>
+		
       </div>
     );
   }

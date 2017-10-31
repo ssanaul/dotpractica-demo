@@ -2,36 +2,87 @@ import React, { Component } from 'react';
 import './App.css';
 import Assessment from './components/Assessment/Assessment';
 import Problem from './components/Problem/Problem';
+import Display from './components/Display/Display';
 
 class App extends Component {
 	constructor(props){
 		super(props);
 		
 		this.state = {
-			quiz1: {
-				key: 0,
-				title: 'Quiz 1',
-				problems: [
-					<Problem key='0a' title="Problem 1a"/>,
-					<Problem key='0b' title="Problem 1b"/>
-				],
-			},
-			quiz2: {
-				key: 1,
-				title: 'Quiz 2',
-				problems: [
-					<Problem key='1a' title="Problem 2a"/>,
-					<Problem key='1b' title="Problem 2b"/>
-				],
-			}
+			displays: [
+				<Display 
+					quiz={
+						<Assessment
+							key='0'
+							title='Quiz 1'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>
+					}
+					quizzes={[
+						<Assessment
+							key='0'
+							title='Quiz 1'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>,
+						<Assessment
+							key='1'
+							title='Quiz 2'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>
+					]}
+				/>,
+				<Display 
+					quiz={
+						<Assessment
+							key='1'
+							title='Quiz 2'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>
+					}
+					quizzes={[
+						<Assessment
+							key='0'
+							title='Quiz 1'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>,
+						<Assessment
+							key='1'
+							title='Quiz 2'
+							problems={[
+								<Problem key='a' title='Problem 1a'/>,
+								<Problem key='b' title='Problem 1b'/>,
+							]}
+						/>
+					]}
+				/>
+			],	
 		}
 	}
   render() {
     return (
       <div>
-		<Assessment title={this.state.quiz1.title} problems={this.state.quiz1.problems}/>
-		<br/>
-		<Assessment title={this.state.quiz2.title} problems={this.state.quiz2.problems}/>
+		{
+			this.state.displays.map(function(d){
+				return <div>
+					{d}
+				</div>
+			})
+		}
       </div>
     );
   }

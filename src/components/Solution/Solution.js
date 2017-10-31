@@ -6,9 +6,10 @@ class Solution extends Component {
   render() {
     return (
       <div>
+	  
 		<Explanation/>
 		<Answer/>
-		<hr/>
+		
       </div>
     );
   }
