@@ -7,7 +7,7 @@ import Notes from '../Notes/Notes';
 class Display extends Component {
   render() {
     return (
-      <div style={{width: '90%', margin: 'auto'}}>
+      <div style={{width: '90%', margin: 'auto', paddingBottom: 50}}>
         <div className="row">
 
       		<div className="col-md-6">

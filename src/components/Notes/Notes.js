@@ -16,15 +16,34 @@ class Notes extends Component {
         [
           "Opportunity Cost",
           [
-            "4 basic principles: opportunity cost, net marginal benefits, the invsible hand, trade",
+            "every activity has a tradeoff",
+            "the opportunity cost of a good or service is the value of the next best alternative that is given to acquire that good or service"
           ]
         ],
         [
           "Net Marginal Benefits",
           [
-            "4 basic principles: opportunity cost, net marginal benefits, the invsible hand, trade",
+            "how do people make decisions?",
+            "maximize benefit, weigh benefit vs cost",
+            "process one unit at a time ==> marginal",
+            "rational people take an action if and only if the marginal benefits outweight the costs of that action"
           ]
         ],
+        [
+          "The Invisible Hand Principle",
+          [
+            "social effects of decisions",
+            "when markets operate efficiently, self interested behavior can benefit everyone"
+          ]
+        ],
+        [
+          "Trade",
+          [
+            "example of individual action leading to greater benefit",
+            "gains of trade- extra productivity from specialization and trade",
+            "occurs when individuals specialize in the activity which they are best at"
+          ]
+        ]
       ]
     }
   }

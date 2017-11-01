@@ -6,7 +6,7 @@ class Assessment extends Component { render() {
   return ( <div>
 
         <CardTitle title={this.props.title} style={{textAlign: 'center'}} />
-
+        
         <div>
           {
             this.props.problems.map(function(p){

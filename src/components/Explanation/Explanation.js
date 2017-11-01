@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 class Explanation extends Component {
@@ -36,7 +35,7 @@ class Explanation extends Component {
   render() {
     return (
       <div>
-
+{/*
         <p>Explanation:</p>
 		<RaisedButton onClick={this.addInput}>Add</RaisedButton>
 		<br/>
@@ -51,7 +50,7 @@ class Explanation extends Component {
 				return e.el
 			})
 		}
-
+*/}
       </div>
     );
   }

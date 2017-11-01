@@ -19,14 +19,43 @@ class App extends Component {
 					problems={[
 						<Problem key='a'
 						title='Why do students usually benefit from studying in groups?'
-						inputType='checkbox'
+						inputType='radio'
 						options={[
 							'some students are smarter than others',
 							'students have different skills',
 							'only poor students benefit'
 						]}
 					/>,
-						<Problem key='b' title='What is demand?'/>,
+						<Problem key='b'
+						title="Tyrone has three options on how to spend his Saturday afternoon: go out with friends, watch a movie, or wash his car. Tyrone's opportunity cost of washing his car would be:"
+						inputType='radio'
+						options={[
+							'the value of going out with friends',
+							'the value of watching a movie',
+							'the value of going out with friends AND watching a movie',
+							'the value of going out with friends OR watching a movie'
+						]}
+						/>,
+						<Problem key='c'
+						title="Suppose you have a choice between studying one more hour for your history exam or studying one more hour for your psychology exam. Your decision on what to study should be based on:"
+						inputType='radio'
+						options={[
+							'the additional benefits of studying for each class',
+							'which class you like the most',
+							'how much time you have already studied for each class',
+							'your current average scores in each class'
+						]}
+						/>,
+						<Problem key='d'
+						title="Suppose you and your roommate have the following agreement when it comes to cleaning your apartment: each person washes her or his own dishes after each meal. The principle of trade you just learned tells you that it would be more efficient if:"
+						inputType='radio'
+						options={[
+							'both of you wash your own dishes after each meal',
+							'neither of you wash the dishes after eating',
+							'each of you wash half of all the dirty dishes',
+							'one of you wash all the dishes while the other does a different chore'
+						]}
+						/>,
 					]}
 				/>,<Assessment
 					key='1'
