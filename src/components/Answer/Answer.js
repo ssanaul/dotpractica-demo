@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import { Paper } from 'material-ui';
 
 class Answer extends Component { render() {
 
@@ -9,7 +8,6 @@ class Answer extends Component { render() {
 
         {
           this.props.inputType==='radio'?
-          <Paper style={{padding: 10}}>
             <RadioButtonGroup>
             {
               this.props.options.map(function(p){
@@ -22,7 +20,6 @@ class Answer extends Component { render() {
               })
             }
             </RadioButtonGroup>
-          </Paper>
           :
           <TextField/>
         }

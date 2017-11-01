@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import { Paper } from 'material-ui';
 
 class Explanation extends Component {
 	constructor(props){
@@ -35,22 +36,27 @@ class Explanation extends Component {
   render() {
     return (
       <div>
-{/*
-        <p>Explanation:</p>
-		<RaisedButton onClick={this.addInput}>Add</RaisedButton>
-		<br/>
-		<br/>
-
-		<div key="0">
-			<span>1.</span>
-			<TextField/>
-		</div>
-		{
-			this.state.explanations.map(function(e){
-				return e.el
-			})
-		}
-*/}
+			<h4>Explain:</h4>
+				<Paper>
+				<div className="row">
+					<div className="col-sm-9" style={{paddingRight: 0}}>
+						<textarea style={{
+							width: '100%',
+							maxWidth: '100%',
+							minWidth: '100%',
+							height: 100,
+							border: 'none',
+							borderRight: '2px solid rgba(200,200,200,.5)',
+							outline: 'none',
+							overflow: 'auto',
+						}}>
+						</textarea>
+					</div>
+					<div className="col-sm-3" style={{paddingLeft: 3}}>
+						<span>Nodes used:</span>
+						</div>
+				</div>
+				</Paper>
       </div>
     );
   }
