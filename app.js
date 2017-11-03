@@ -20,6 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'dotp-react/build')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -42,5 +43,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const port = process.env.PORT || 3000;
+app.listen(port);
 
 module.exports = app;
