@@ -3,6 +3,7 @@ import { Button, Header, Image, Modal } from 'semantic-ui-react'
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import { Icon } from 'semantic-ui-react'
+import Home from '../Home/Home';
 
 class Demo extends Component {
   constructor(props){
@@ -16,7 +17,7 @@ class Demo extends Component {
   render() {
   const styles = {
     modal: {
-      height: 375,
+      height: 400,
     },
     navBar: {
       backgroundColor: 'rgb(20, 70, 70)',
@@ -45,9 +46,11 @@ class Demo extends Component {
         <Tabs style={styles.tabs} inkBarStyle={styles.inkBar}>
           <Tab label="Home" style={styles.tab} disableTouchRipple={true}>
           </Tab>
-          <Tab label="Assessments" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Assignments" style={styles.tab} disableTouchRipple={true}>
           </Tab>
-          <Tab label="Connections" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Dots" style={styles.tab} disableTouchRipple={true}>
+          </Tab>
+          <Tab label="Syllabus" style={styles.tab} disableTouchRipple={true}>
           </Tab>
           <Tab label="Grades" style={styles.tab} disableTouchRipple={true}>
           </Tab>
@@ -55,14 +58,14 @@ class Demo extends Component {
       }
       iconElementLeft={<span style={{marginRight: 20}}>
         <Icon name='content' size='big' style={{marginBottom: 15, marginRight: 15}}/>
-        <h1 style={{display:'inline'}}>Intro to Physics</h1>
+        <h1 style={{display:'inline'}}>Microeconomics</h1>
       </span>}
       iconElementRight={
         <img alt="dotp-logo" src='dotp.PNG' width={33} height={33}/>
       }
       />
     <div>
-      {this.props.displays[0]}
+      <Home/>
     </div>
     <Modal
       open={this.state.demoModalOpen}
@@ -72,16 +75,16 @@ class Demo extends Component {
     <Modal.Content image>
       <Image wrapped size='medium' src='dotp.PNG' />
       <Modal.Description>
-        <Header>DotPractica is an interactive education aid that streamlines the
-        formative assessment process for high schools using powerful data
-        visualization tools</Header>
-        <p>For the demo, you will experience the app as a student as well as
-        an educator.</p>
-        <p>To begin, you will take a quiz meant for a high school student in the
-        middle of an introductory physics class.</p>
-        <p>Upon submitting the quiz, you will be able to review the quiz as if
-        you were a teacher.</p>
-        <p>You will also be able to review class-wide analytics produced by DotPractica.</p>
+        <Header>DotPractica streamlines the formative assessment and discussion
+         process for high schools using state-of-the-art cloud technology and
+         powerful data visualization tools</Header>
+        <p>During this demo, you can engage the app as both a student and an educator
+        participating in an introductory economics course.</p>
+        <p>Activities as a student include participation in a discussion, completing
+        a quiz, receving feedback from a teacher, and studying past assignments.</p>
+        <p>As an educator, you will be able to review student participation in the
+        discussion, provide feedback on assignments, review student performance on
+        assignments, and gain insight on student comprehension.</p>
         <p>Learn more about our mission
         at <a target="_blank" rel="noopener noreferrer" href="http://dotpractica.com">dotpractica.com</a>
         </p>
