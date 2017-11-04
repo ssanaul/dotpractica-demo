@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 
 import Assessment from './components/Assessment/Assessment';
 import Problem from './components/Problem/Problem';
 import Display from './components/Display/Display';
+import Demo from './components/Demo/Demo';
 
 class App extends Component {
 	constructor(props){
@@ -124,6 +124,12 @@ class App extends Component {
 			.then(users => this.setState({ users }));
 	}
   render() {
+	const styles = {
+		container: {
+			width: '80%',
+			margin: 'auto',
+		},
+	}
 	var displays = null;
 	var allQuizzes = this.state.quizzes;
 	var generatedDisplays = this.state.quizzes.map(function(q){
@@ -132,17 +138,11 @@ class App extends Component {
 	})
 	displays = generatedDisplays;
     return (
-      <MuiThemeProvider>
-			<AppBar title="ECON 102: Principles of Microeconomics"/>
-			{displays[0]}
-			<div>
-				{
-					this.state.users.map(function(u){
-						return <div key={u.id}>{u.username}</div>
-					})
-				}
+			<div style={styles.container}>
+				<MuiThemeProvider>
+				<Demo displays={displays}/>
+	      </MuiThemeProvider>
 			</div>
-      </MuiThemeProvider>
     );
   }
 }
