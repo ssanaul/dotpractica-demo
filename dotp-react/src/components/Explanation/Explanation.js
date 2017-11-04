@@ -44,15 +44,6 @@ class Explanation extends Component {
 				<Paper>
 				<div className="row">
 					<div className="col-sm-12">
-						<Toolbar style={styles.toolbar}>
-							<ToolbarGroup>
-								<ToolbarTitle text={
-									<span style={styles.toolbarText}>
-										Options
-									</span>}
-								/>
-							</ToolbarGroup>
-						</Toolbar>
 					</div>
 				</div>
 				<div className="row">

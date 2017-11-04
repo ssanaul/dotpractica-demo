@@ -8,13 +8,13 @@ class Solution extends Component {
     return (
       <div>
 
-      <Paper style={{padding: 10}}>
+      <div style={{padding: 10}}>
     		<Answer
           inputType={this.props.inputType}
           options={this.props.options}/>
 
         <Explanation/>
-      </Paper>
+      </div>
       </div>
     );
   }

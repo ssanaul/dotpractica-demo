@@ -4,6 +4,8 @@ import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import { Icon } from 'semantic-ui-react'
 import Home from '../Home/Home';
+import Display from '../Display/Display';
+import AssignmentView from '../AssignmentView/AssignmentView';
 
 class Demo extends Component {
   constructor(props){
@@ -11,9 +13,13 @@ class Demo extends Component {
 
     this.state = {
       demoModalOpen: true,
+      componentDisplayed: 'home',
     }
   }
   handleDemoModalClose = () => this.setState({demoModalOpen: false});
+  handleChange = (value) => {
+    this.setState({componentDisplayed: value});
+  };
   render() {
   const styles = {
     modal: {
@@ -43,16 +49,18 @@ class Demo extends Component {
       <AppBar
       style={styles.navBar}
       title={
-        <Tabs style={styles.tabs} inkBarStyle={styles.inkBar}>
-          <Tab label="Home" style={styles.tab} disableTouchRipple={true}>
+        <Tabs style={styles.tabs}
+          inkBarStyle={styles.inkBar}
+          onChange={this.handleChange}>
+          <Tab label="Home" style={styles.tab} value="home" disableTouchRipple={true}>
           </Tab>
-          <Tab label="Assignments" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Assignments" style={styles.tab} value="assignments" disableTouchRipple={true}>
           </Tab>
-          <Tab label="Dots" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Dots" style={styles.tab} value="dots" disableTouchRipple={true}>
           </Tab>
-          <Tab label="Syllabus" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Syllabus" style={styles.tab} value="syllabus" disableTouchRipple={true}>
           </Tab>
-          <Tab label="Grades" style={styles.tab} disableTouchRipple={true}>
+          <Tab label="Grades" style={styles.tab} value="grades" disableTouchRipple={true}>
           </Tab>
         </Tabs>
       }
@@ -64,9 +72,13 @@ class Demo extends Component {
         <img alt="dotp-logo" src='dotp.PNG' width={33} height={33}/>
       }
       />
-    <div>
-      <Home/>
-    </div>
+
+      {this.state.componentDisplayed==='home'?<Home quizzes={this.props.quizzes}/>:''}
+      {this.state.componentDisplayed==='assignments'?<AssignmentView quizzes={this.props.quizzes}/>:''}
+      {this.state.componentDisplayed==='dots'?<div/>:''}
+
+
+
     <Modal
       open={this.state.demoModalOpen}
       style={styles.modal}
@@ -97,4 +109,5 @@ class Demo extends Component {
       </Modal.Description>
     </Modal.Content>
   </Modal>
+
   </div> ); } } export default Demo;

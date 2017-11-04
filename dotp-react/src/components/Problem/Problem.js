@@ -7,7 +7,7 @@ class Problem extends Component {
     return (
       <div>
 
-        <h3>{this.props.title}</h3>
+        <h3 style={{marginBottom: 0}}>{this.props.title}</h3>
 		      <Solution
             inputType={this.props.inputType}
             options={this.props.options}/>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Paper } from 'material-ui';
 import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
+import AppBar from 'material-ui/AppBar';
 
 class Assessment extends Component { render() {
   const styles = {
-    toolbar : {
+    quizbar : {
       marginTop: 20,
-      backgroundColor: 'rgba(200,200,200,.25)',
+      backgroundColor: 'rgba(10, 20, 20, .7)',
+      textAlign: 'center'
     },
     toolbarText : {
       textAlign: 'center',
@@ -21,13 +23,11 @@ class Assessment extends Component { render() {
   }
   return ( <div>
 
-        <Toolbar style={styles.toolbar}>
-            <ToolbarTitle text={
-              <p style={styles.toolbarText}>{this.props.title}</p>
-            }
-            style={styles.toolbarTextWrapper}/>
-        </Toolbar>
-
+        <AppBar
+          title={this.props.title}
+          iconElementLeft={<div></div>}
+          style={styles.quizbar}
+        />
         <div>
           {
             this.props.problems.map(function(p){

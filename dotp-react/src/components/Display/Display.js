@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ListItem } from 'material-ui/List';
 import { CardTitle, Paper } from 'material-ui';
+import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
+import {Icon} from 'semantic-ui-react';
 
 import Notes from '../Notes/Notes';
 
@@ -10,17 +12,23 @@ class Display extends Component {
       <div style={{width: '100%', margin: 'auto', paddingBottom: 50}}>
         <div className="row">
 
-      		<div className="col-md-6">
+      		<div className="col-md-7">
       			{this.props.quiz}
       		</div>
 
-      		<div className="col-md-3">
-      			<CardTitle
-      				title='Previous Assessments'
-              style={{textAlign:'center'}}
-      			/>
-      			<Paper>
-      			{
+          {/*<Toolbar style={styles.toolbar}>
+              <ToolbarTitle text={
+                <p style={styles.toolbarText}>{this.props.title}</p>
+              }
+              style={styles.toolbarTextWrapper}/>
+          </Toolbar>*/}
+
+      		<div className="col-md-5">
+            <Toolbar style={{marginTop: 20, border: 'thin solid rgba(0,0,0,.1)'}}>
+              <ToolbarTitle text={<div><Icon name='sitemap'/>Dots</div>} style={{width: '100%', margin: 'auto',
+              textAlign: 'center', fontSize: '24px'}}/>
+            </Toolbar>
+      			{/*
       				this.props.quizzes.map(function(q){
       					return <ListItem
       						primaryText={q.props.title}
@@ -33,18 +41,10 @@ class Display extends Component {
       						]}
       					/>
       				})
-      			}
-      			</Paper>
+      			*/}
       		</div>
 
-          <div className="col-md-3">
-            <CardTitle
-              title="Notes"
-              style={{textAlign:'center'}}/>
-            <Paper>
-              <Notes/>
-            </Paper>
-          </div>
+          {/*<Notes/>*/}
 
         </div>
       </div>

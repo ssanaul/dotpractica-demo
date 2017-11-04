@@ -20,15 +20,9 @@ class App extends Component {
 					problems={[
 						<Problem key='a'
 						title='Why do students usually benefit from studying in groups?'
-						inputType='radio'
-						options={[
-							'some students are smarter than others',
-							'students have different skills',
-							'only poor students benefit'
-						]}
 					/>,
 						<Problem key='b'
-						title="Tyrone has three options on how to spend his Saturday afternoon: go out with friends, watch a movie, or wash his car. Tyrone's opportunity cost of washing his car would be:"
+						title="You have three options on how to spend your Saturday afternoon: go out with friends, watch a movie, or wash your car. Your opportunity cost of washing your car would be:"
 						inputType='radio'
 						options={[
 							'the value of going out with friends',
@@ -72,49 +66,7 @@ class App extends Component {
 						<Problem key='a' title='Problem 1a'/>,
 						<Problem key='b' title='Problem 1b'/>,
 					]}
-				/>,<Assessment
-					key='3'
-					title='Basics of Supply and Demand'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='4'
-					title='Demand'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='5'
-					title='Supply'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='6'
-					title='Market Equilibrium'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='7'
-					title='Price Ceilings and Price Floors'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='8'
-					title='Elasticity of Demand'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,
+				/>
 			],
 		}
 	}
@@ -126,7 +78,7 @@ class App extends Component {
   render() {
 	const styles = {
 		container: {
-			width: '95%',
+			width: '90%',
 			margin: 'auto',
 		},
 	}
@@ -140,7 +92,7 @@ class App extends Component {
     return (
 			<div style={styles.container}>
 				<MuiThemeProvider>
-				<Demo displays={displays}/>
+					<Demo displays={displays} quizzes={this.state.quizzes}/>
 	      </MuiThemeProvider>
 			</div>
     );

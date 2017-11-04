@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import {Radio, Form} from 'semantic-ui-react';
 
 class Answer extends Component { render() {
 
@@ -8,18 +9,20 @@ class Answer extends Component { render() {
 
         {
           this.props.inputType==='radio'?
-            <RadioButtonGroup>
+          <Form>
+            <Form.Field>
             {
               this.props.options.map(function(p){
-                return <RadioButton
-                        value={p}
-                        label={
-                          <p style={{fontWeight: 'normal'}}>{p}</p>
-                        }
-                      />
+                return <div>
+                        <Radio
+                          value={p}
+                          label={p}
+                        />
+                        </div>
               })
             }
-            </RadioButtonGroup>
+            </Form.Field>
+            </Form>
           :
           <TextField/>
         }
