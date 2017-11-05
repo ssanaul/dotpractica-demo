@@ -87,8 +87,6 @@ class Demo extends Component {
           </Tab>
           <Tab label="Dots" style={styles.tab} value="dots" disableTouchRipple={true}>
           </Tab>
-          <Tab label="Syllabus" style={styles.tab} value="syllabus" disableTouchRipple={true}>
-          </Tab>
           <Tab label="Grades" style={styles.tab} value="grades" disableTouchRipple={true}>
           </Tab>
         </Tabs>
@@ -101,8 +99,6 @@ class Demo extends Component {
           <Tab label="Assignments" style={styles.tab} value="feedback" disableTouchRipple={true}>
           </Tab>
           <Tab label="Analytics" style={styles.tab} value="analytics" disableTouchRipple={true}>
-          </Tab>
-          <Tab label="Syllabus" style={styles.tab} value="syllabus-edu" disableTouchRipple={true}>
           </Tab>
           <Tab label="Grades" style={styles.tab} value="grades-edu" disableTouchRipple={true}>
           </Tab>

@@ -12,7 +12,8 @@ class Problem extends Component {
             inputType={this.props.inputType}
             options={this.props.options}
             completed={this.props.completed}
-            answer={this.props.answer}/>
+            answer={this.props.answer}
+            explanation={this.props.explanation}/>
 
       </div>
     );

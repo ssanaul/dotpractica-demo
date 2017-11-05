@@ -46,7 +46,7 @@ class Explanation extends Component {
 				</div>
 				<div className="row">
 					<div className="col-sm-12">
-						<textarea style={styles.customTextarea}>
+						<textarea style={styles.customTextarea} value={this.props.explanation}>
 						</textarea>
 					</div>
 				</div>

@@ -23,6 +23,7 @@ class Assessment extends Component {
     },
     problemWrapper : {
       padding: 20,
+      marginBottom: 10
     },
   }
   return ( <div>

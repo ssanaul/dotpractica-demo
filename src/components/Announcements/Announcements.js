@@ -7,14 +7,14 @@ class Announcements extends Component { render() {
 
   return ( <div>
 
-  <Card>
+  <Card style={{marginBottom: 50}}>
     <CardHeader
       title={<div>
         <h2>Announcements</h2>
         </div>}
     />
     <Divider/>
-    <CardMedia>
+    <CardMedia style={{height: 200}}>
       <CardText>No announcements yet</CardText>
     </CardMedia>
   </Card>

@@ -19,8 +19,9 @@ class AssignmentView extends Component {
       assignmentIsDisplayed: false,
       selectedQuiz: null,
       values: {
-        0: 80,
-        1: 100
+        0: 100,
+        1: 100,
+        2: 100
       }
     }
 
@@ -85,9 +86,9 @@ class AssignmentView extends Component {
     <List>
       <Subheader>Open</Subheader>
       <ListItem
-          key={2}
+          key={3}
           innerDivStyle={{paddingRight: '16px'}}
-          onClick={()=>setSelected(2)}>
+          onClick={()=>setSelected(3)}>
           <Toolbar style={styles.toolbar}>
           <ToolbarGroup firstChild={true}>
             <ToolbarTitle

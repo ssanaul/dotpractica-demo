@@ -25,12 +25,14 @@ class App extends Component {
 						completed={true}
 						title='Why do students usually benefit from studying in groups?'
 						inputType='umbrella'
+						explanation="Different students tend to have different skills. The principle of trade states that individuals should focus on a specialty."
 					/>,
 						<Problem key='b'
 						completed={true}
 						title="On Saturday afternoon, you can go out with friends, watch a movie, or wash your car. Your opportunity cost of washing your car would be:"
 						inputType='radio'
 						answer="the value of going out with friends OR watching a movie"
+						explanation="Opportunity cost is the loss of potential gain from the alternatives of a choice. Since only one choice can be made, the potential gain lost is attributed to either of the two alternatives."
 						options={[
 							'the value of going out with friends',
 							'the value of watching a movie',
@@ -43,6 +45,7 @@ class App extends Component {
 						title="You and your roommate are dividing up household chores. The principle of trade tells you that it would be more efficient if:"
 						inputType='radio'
 						answer="one of you washes all the dishes while the other does a different chore"
+						explanation="By specializing in our individual tasks, we benefit as a group."
 						options={[
 							'both of you wash your own dishes after each meal',
 							'neither of you washes the dishes after eating',
@@ -56,13 +59,22 @@ class App extends Component {
 					key='1'
 					completed={true}
 					value={1}
-					title='Supply and Demand'
+					title='Surplus: Practical Application'
 					problems={[
 						<Problem key='a'
 						completed={true}
 						title='Why did the number of American farmers decline since 1950?'
+						explanation="Since technology has advanced, farmers have been more productive. They have been able to produce more crops, which decreased their cost. So, many farmers chose different careers."
 						inputType='umbrella'
-					/>,
+					/>
+				]}
+				/>,
+				<Assessment
+				key='2'
+				completed={true}
+				value={2}
+				title='Supply and Demand'
+				problems={[
 						<Problem key='b'
 						completed={true}
 						title="When there is a shortage of a good, we expect the price will:"
@@ -88,9 +100,9 @@ class App extends Component {
 					]}
 				/>,
 				<Assessment
-					key='2'
+					key='3'
 					completed={false}
-					value={2}
+					value={3}
 					title="Market Equilibrium"
 					problems={[
 						<Problem key='a'
