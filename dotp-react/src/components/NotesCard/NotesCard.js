@@ -6,7 +6,7 @@ import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui';
 class NotesCard extends Component { render() {
   const styles = {
     bigTextarea: {
-      fontSize: '20px',
+      fontSize: '22px',
       width: '100%',
       maxWidth: '100%',
       minWidth: '100%',

@@ -24,7 +24,7 @@ class Answer extends Component { render() {
             </Form.Field>
             </Form>
           :
-          <TextField/>
+          ''
         }
 
   </div> ); } } export default Answer;

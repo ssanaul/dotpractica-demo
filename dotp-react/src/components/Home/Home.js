@@ -12,8 +12,14 @@ import ModuleUmbrella from '../ModuleUmbrella/ModuleUmbrella';
 class Home extends Component { render() {
 
   return ( <div>
-    <ModuleUmbrella/>
-    <NotesCard/>
-    <Announcements/>
+    <div style={{marginBottom: 10}}>
+      <ModuleUmbrella/>
+    </div>
+    <div style={{marginBottom: 10}}>
+      <NotesCard/>
+    </div>
+    <div>
+      <Announcements/>
+    </div>
 
   </div> ); } } export default Home;

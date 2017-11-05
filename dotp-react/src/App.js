@@ -16,6 +16,7 @@ class App extends Component {
 			quizzes: [
 				<Assessment
 					key='0'
+					value={0}
 					title='Key Ideas of Economics'
 					problems={[
 						<Problem key='a'
@@ -50,6 +51,44 @@ class App extends Component {
 							'neither of you wash the dishes after eating',
 							'each of you wash half of all the dirty dishes',
 							'one of you wash all the dishes while the other does a different chore'
+						]}
+						/>,
+					]}
+				/>,
+				<Assessment
+					key='1'
+					value={1}
+					title='Supply and Demand'
+					problems={[
+						<Problem key='a'
+						title='Why did the number of American farmers decline since 1950?'
+						inputType='umbrella'
+					/>,
+						<Problem key='b'
+						title="When there is a shortage of a good, we expect the price will:"
+						inputType='radio'
+						options={[
+							'increase',
+							'decrease',
+							'stagnate'
+						]}
+						/>,
+						<Problem key='c'
+						title="When there is a surplus of a good, we expect the price will:"
+						inputType='radio'
+						options={[
+							'increase',
+							'decrease',
+							'stagnate'
+						]}
+						/>,
+						<Problem key='d'
+						title="What term do economists use to mean 'all other factors are unchanged'?"
+						inputType='radio'
+						options={[
+							'carpe diem',
+							'ceteris paribus',
+							'lorem ipsum'
 						]}
 						/>,
 					]}

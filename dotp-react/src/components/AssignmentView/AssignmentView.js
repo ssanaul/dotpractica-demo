@@ -7,15 +7,22 @@ import {Toolbar, ToolbarTitle, ToolbarGroup} from 'material-ui/Toolbar';
 import {Paper} from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
 import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider';
 
 class AssignmentView extends Component {
   constructor(props){
     super(props);
 
     this.state = {
+      assignmentIsDisplayed: false,
+      selectedQuiz: null,
     }
-  }
 
+    this.setSelected = this.setSelected.bind(this);
+  }
+  setSelected = function(event, q){
+    this.setState({selectedQuiz: q});
+  };
   render() {
     const styles = {
       umbrellaIcon: {
@@ -27,13 +34,13 @@ class AssignmentView extends Component {
         backgroundColor: 'rgba(20, 50, 100, .7)',
       },
       toolbarTitle: {
-        color: 'rgb(10, 20, 20)',
+        color: 'rgb(0, 10, 20)',
         marginLeft: 25,
         paddingRight: 0,
       },
       toolbar: {
-        backgroundColor: 'rgba(10, 20, 20, .1)',
-        borderRadius: 2
+        backgroundColor: 'rgba(0, 10, 20, .05)',
+        borderRadius: 2,
       },
 
     }
@@ -43,29 +50,42 @@ class AssignmentView extends Component {
         gathered.push(<ListItem>
             <Icon name="chevron circle right" size="medium"/>
             {p.props.title}
-            {p.props.inputType==="umbrella"?<Avatar children={
+            {p.props.inputType==="umbrella"?<span>
+            <Avatar children={
               <Icon name="umbrella" style={styles.umbrellaIcon}/>}
-              style={styles.umbrellaAvatar}
-              />:''}
+              style={styles.umbrellaAvatar}/>
+              <Divider style={{marginTop: 10}}/>
+              </span>:''}
           </ListItem>);
       });
       return gathered;
-    }
+    };
     var nestedAreOpen = this.state.nestedAreOpen;
+    var setSelected = (q) => this.setState({
+        assignmentIsDisplayed: true,
+        selectedQuiz: q,
+    });
+    var displayAll = (event) => this.setState({
+      assignmentIsDisplayed: false,
+      selectedQuiz: null,
+    });
   return ( <div>
-    <Paper>
+    <Paper style={{display: this.state.assignmentIsDisplayed?'none':''}}>
     <List>
-      {this.props.quizzes.map(function(q){
+      {
+        this.props.quizzes.map(function(q, index){
         return  <ListItem
+                  key={index}
                   nestedItems={gatherNested(q)}
-                  innerDivStyle={{paddingRight: '16px'}}>
+                  innerDivStyle={{paddingRight: '16px'}}
+                  onClick={()=>setSelected(q.props.value)}>
                   <Toolbar style={styles.toolbar}>
                   <ToolbarGroup firstChild={true}>
                     <ToolbarTitle
                       style={styles.toolbarTitle}
                       text={q.props.title}
                     />
-                    <FlatButton label="Open" labelStyle={{color: 'white'}} backgroundColor="rgba(50, 175, 150, .9)"/>
+                    {/*<FlatButton label="Open" labelStyle={{color: 'white'}} backgroundColor="rgba(50, 175, 150, .9)"/>*/}
                   </ToolbarGroup>
                   <ToolbarGroup lastChild={true} style={{width: 420, marginRight: 50}}>
                     <LinearProgress mode='determinate' value={30} style={{height: 7, borderRadius: 3}}/>
@@ -76,5 +96,10 @@ class AssignmentView extends Component {
     }
     </List>
     </Paper>
-
+      <div style={{display: this.state.assignmentIsDisplayed?'':'none'}}>
+      <FlatButton style={{borderBottom: '1px solid rgba(0,0,0,.3)'}} label="Go back"
+      icon={<Icon name="arrow left" size="small" fitted/>}
+      onClick={displayAll}/>
+      {this.props.displays[this.state.selectedQuiz]}
+      </div>
   </div> ); } } export default AssignmentView;

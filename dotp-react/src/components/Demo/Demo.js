@@ -91,7 +91,7 @@ class Demo extends Component {
             size='big'
             style={styles.classChooserIcon}
             onClick={this.handleTouchTapClassChooser}/>
-          <h1 style={{display:'inline'}}>Microeconomics</h1>
+          <h2 style={{display:'inline'}}>Microeconomics</h2>
           <Popover
             open={this.state.classChooserIsOpen}
             anchorEl={this.state.anchorEl}
@@ -111,11 +111,21 @@ class Demo extends Component {
       }
       />
 
-      {this.state.componentDisplayed==='home'?<Home quizzes={this.props.quizzes}/>:''}
-      {this.state.componentDisplayed==='assignments'?<AssignmentView quizzes={this.props.quizzes}/>:''}
-      {this.state.componentDisplayed==='dots'?<Dots/>:''}
-      {this.state.componentDisplayed==='syllabus'?<Syllabus/>:''}
-      {this.state.componentDisplayed==='grades'?<Gradebook/>:''}
+      <div style={{display: this.state.componentDisplayed==='home'?'':'none'}}>
+        <Home quizzes={this.props.title}/>
+      </div>
+      <div style={{display: this.state.componentDisplayed==='assignments'?'':'none'}}>
+        <AssignmentView displays={this.props.displays} quizzes={this.props.quizzes}/>
+      </div>
+      <div style={{display: this.state.componentDisplayed==='dots'?'':'none'}}>
+        <Dots/>
+      </div>
+      <div style={{display: this.state.componentDisplayed==='syllabus'?'':'none'}}>
+        <Syllabus/>
+      </div>
+      <div style={{display: this.state.componentDisplayed==='gradebook'?'':'none'}}>
+        <Gradebook/>
+      </div>
 
 
 

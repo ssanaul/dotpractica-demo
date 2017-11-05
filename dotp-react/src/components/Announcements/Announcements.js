@@ -12,11 +12,10 @@ class Announcements extends Component { render() {
       title={<div>
         <h2>Announcements</h2>
         </div>}
-      subtitle='No announcements yet...'
     />
+    <Divider/>
     <CardMedia>
-      <div className="row">
-      </div>
+      <CardText>No announcements yet</CardText>
     </CardMedia>
   </Card>
 

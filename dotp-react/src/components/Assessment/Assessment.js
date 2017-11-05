@@ -3,11 +3,15 @@ import { Paper } from 'material-ui';
 import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
 import AppBar from 'material-ui/AppBar';
 
-class Assessment extends Component { render() {
+class Assessment extends Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
   const styles = {
     quizbar : {
-      marginTop: 20,
-      backgroundColor: 'rgba(10, 20, 20, .7)',
+      marginTop: 10,
+      backgroundColor: 'rgba(0, 10, 20, .8)',
       textAlign: 'center'
     },
     toolbarText : {
