@@ -39,7 +39,7 @@ class NotesCard extends Component { render() {
             <ToolbarTitle text='Options'/>
           </ToolbarGroup>
         </Toolbar>*/}
-        <textarea placeholder='Your notes here...' style={styles.bigTextarea}/>
+        <textarea placeholder='Type your notes here...' style={styles.bigTextarea}/>
       </div>
     </CardMedia>
   </Card>

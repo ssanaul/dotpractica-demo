@@ -7,6 +7,8 @@ import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
 import Badge from 'material-ui/Badge';
 import CircularProgress from 'material-ui/CircularProgress';
+import {List, ListItem} from 'material-ui/List';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 class ModuleUmbrella extends Component {
   constructor(props){
@@ -24,7 +26,7 @@ const styles = {
     width: '100%',
     maxWidth: '100%',
     minWidth: '100%',
-    height: 200,
+    height: 300,
     minHeight: 100,
     border: '2px solid rgba(0,0,0,.1)',
     outline: 'none',
@@ -93,7 +95,7 @@ var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.current
       </span>
       :
       <span style={styles.receivingText}>
-        Receiving submissions...<CircularProgress size={15} thickness={5}/>
+        Your teacher is now taking submissions...<CircularProgress size={15} thickness={5}/>
         </span>
       }
       </div>
@@ -101,17 +103,48 @@ var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.current
     />
     <CardMedia>
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-7">
           <div style={styles.umbrellaWrapper}>
             <textarea onInput={updateUmbrellaValue} value={this.state.umbrellaValue}
-            style={styles.umbrellaTextarea} placeholder="Your inference here..."/>
+            style={styles.umbrellaTextarea} placeholder="Type your inference here..."/>
             <FlatButton label="Submit" backgroundColor='rgba(50, 175, 150, .9)'
             style={styles.submitButton} onClick={handleSubmit}/>
           </div>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-5">
           <h3><Icon name="share alternate" circular/>Dots</h3>
           <Divider/>
+          <Scrollbars style={{height: 290}}>
+          <List>
+          <ListItem leftAvatar={<Avatar size={20} style={{marginTop: 15}} backgroundColor='rgba(50, 175, 150, .9)'
+          icon={<Icon name="radio" circular fitted/>}/>}
+primaryText={<div>
+  <span>On Saturday afternoon, you can go out with friends,
+watch a movie, or wash your car. Your opportunity cost of washing your car would be: </span>
+<span style={{color: 'green'}}>the value of going out with friends OR watching a movie</span>
+</div>}/>
+<ListItem leftAvatar={<Avatar size={20} style={{marginTop: 15}} backgroundColor='rgba(50, 175, 150, .9)'
+icon={<Icon name="radio" circular fitted/>}/>}
+primaryText={<div>
+<span>You and your roommate are dividing up household chores. The principle of
+trade tells you that it would be more efficient if: </span>
+<span style={{color: 'green'}}>one of you washes all the dishes while the other
+does a different chore</span>
+</div>}/>
+<ListItem leftAvatar={<Avatar size={20} style={{marginTop: 8}} backgroundColor='rgba(50, 175, 150, .9)'
+icon={<Icon name="radio" circular fitted/>}/>}
+primaryText={<div>
+<span>When there is a shortage of a good, we expect the price will: </span>
+<span style={{color: 'green'}}>increase</span>
+</div>}/>
+<ListItem leftAvatar={<Avatar size={20} style={{marginTop: 8}} backgroundColor='rgba(50, 175, 150, .9)'
+icon={<Icon name="radio" circular fitted/>}/>}
+primaryText={<div>
+<span>When there is a surplus of a good, we expect the price will: </span>
+<span style={{color: 'green'}}>decrease</span>
+</div>}/>
+          </List>
+          </Scrollbars>
         </div>
       </div>
     </CardMedia>

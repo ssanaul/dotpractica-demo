@@ -6,6 +6,8 @@ import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {List, ListItem} from 'material-ui/List';
 
 import Home from '../Home/Home';
 import Display from '../Display/Display';
@@ -24,6 +26,7 @@ class Demo extends Component {
       classChooserIsOpen: false,
       anchorEl: null,
       otherView: 'educator',
+      studentView: true,
     }
   }
   handleDemoModalClose = () => this.setState({demoModalOpen: false});
@@ -36,6 +39,11 @@ class Demo extends Component {
     });
   };
   handleRequestClose = () => this.setState({classChooserIsOpen: false});
+  switchView = () => this.setState({
+    studentView: !this.state.studentView,
+    otherView: this.state.otherView==='educator'?'student':'educator',
+    componentDisplayed: this.state.studentView?'discussion':'home',
+  });
   render() {
   const styles = {
     modal: {
@@ -69,7 +77,7 @@ class Demo extends Component {
   return ( <div>
       <AppBar
       style={styles.navBar}
-      title={
+      title={this.state.studentView?
         <Tabs style={styles.tabs}
           inkBarStyle={styles.inkBar}
           onChange={this.handleChange}>
@@ -82,6 +90,21 @@ class Demo extends Component {
           <Tab label="Syllabus" style={styles.tab} value="syllabus" disableTouchRipple={true}>
           </Tab>
           <Tab label="Grades" style={styles.tab} value="grades" disableTouchRipple={true}>
+          </Tab>
+        </Tabs>
+        :
+        <Tabs style={styles.tabs}
+          inkBarStyle={styles.inkBar}
+          onChange={this.handleChange}>
+          <Tab label="Discussion" style={styles.tab} value="discussion" disableTouchRipple={true}>
+          </Tab>
+          <Tab label="Assignments" style={styles.tab} value="feedback" disableTouchRipple={true}>
+          </Tab>
+          <Tab label="Analytics" style={styles.tab} value="analytics" disableTouchRipple={true}>
+          </Tab>
+          <Tab label="Syllabus" style={styles.tab} value="syllabus-edu" disableTouchRipple={true}>
+          </Tab>
+          <Tab label="Grades" style={styles.tab} value="grades-edu" disableTouchRipple={true}>
           </Tab>
         </Tabs>
       }
@@ -105,7 +128,7 @@ class Demo extends Component {
               <MenuItem primaryText='Philosophy'/>
               <MenuItem primaryText='Physics'/>
               <Divider/>
-              <MenuItem primaryText={<i>Switch to {this.state.otherView} view</i>}/>
+              <MenuItem onClick={this.switchView} primaryText={<i>Switch to {this.state.otherView} view</i>}/>
             </Menu>
           </Popover>
         </span>}
@@ -113,6 +136,8 @@ class Demo extends Component {
         <img alt="dotp-logo" src='dotp.PNG' width={33} height={33}/>
       }
       />
+
+      <div style={{display: this.state.studentView?'':'none'}}>
 
       <div style={{display: this.state.componentDisplayed==='home'?'':'none'}}>
         <Home quizzes={this.props.title}/>
@@ -128,6 +153,34 @@ class Demo extends Component {
       </div>
       <div style={{display: this.state.componentDisplayed==='gradebook'?'':'none'}}>
         <Gradebook/>
+      </div>
+
+      </div>
+
+      <div style={{display: this.state.studentView?'none':''}}>
+        <div style={{display: this.state.componentDisplayed==='discussion'?'':'none'}}>
+        <Card>
+          <CardHeader title={<h2>Feed</h2>}/>
+          <Divider/>
+          <CardMedia>
+            <List>
+              <ListItem/>
+            </List>
+          </CardMedia>
+        </Card>
+        </div>
+        <div style={{display: this.state.componentDisplayed==='feedback'?'':'none'}}>
+
+        </div>
+        <div style={{display: this.state.componentDisplayed==='analytics'?'':'none'}}>
+
+        </div>
+        <div style={{display: this.state.componentDisplayed==='syllabus-edu'?'':'none'}}>
+
+        </div>
+        <div style={{display: this.state.componentDisplayed==='gradebook-edu'?'':'none'}}>
+
+        </div>
       </div>
 
 

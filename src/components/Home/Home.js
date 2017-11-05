@@ -13,7 +13,7 @@ class Home extends Component { render() {
 
   return ( <div>
     <div style={{marginBottom: 10}}>
-      <ModuleUmbrella/>
+      <ModuleUmbrella />
     </div>
     <div style={{marginBottom: 10}}>
       <NotesCard/>

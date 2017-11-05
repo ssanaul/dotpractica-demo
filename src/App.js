@@ -13,6 +13,7 @@ class App extends Component {
 
 		this.state = {
 			users: [],
+			dots: [],
 			quizzes: [
 				<Assessment
 					key='0'
@@ -27,8 +28,9 @@ class App extends Component {
 					/>,
 						<Problem key='b'
 						completed={true}
-						title="You have three options on how to spend your Saturday afternoon: go out with friends, watch a movie, or wash your car. Your opportunity cost of washing your car would be:"
+						title="On Saturday afternoon, you can go out with friends, watch a movie, or wash your car. Your opportunity cost of washing your car would be:"
 						inputType='radio'
+						answer="the value of going out with friends OR watching a movie"
 						options={[
 							'the value of going out with friends',
 							'the value of watching a movie',
@@ -38,19 +40,9 @@ class App extends Component {
 						/>,
 						<Problem key='c'
 						completed={true}
-						title="Suppose you have a choice between studying one more hour for your history exam or studying one more hour for your psychology exam. Your decision on what to study should be based on:"
+						title="You and your roommate are dividing up household chores. The principle of trade tells you that it would be more efficient if:"
 						inputType='radio'
-						options={[
-							'the additional benefits of studying for each class',
-							'which class you like the most',
-							'how much time you have already studied for each class',
-							'your current average scores in each class'
-						]}
-						/>,
-						<Problem key='d'
-						completed={true}
-						title="Suppose you and your roommate have the following agreement when it comes to cleaning your apartment: each person washes her or his own dishes after each meal. The principle of trade tells you that it would be more efficient if:"
-						inputType='radio'
+						answer="one of you washes all the dishes while the other does a different chore"
 						options={[
 							'both of you wash your own dishes after each meal',
 							'neither of you washes the dishes after eating',
@@ -92,16 +84,6 @@ class App extends Component {
 							'stagnate'
 						]}
 						answer='decrease'
-						/>,
-						<Problem key='d'
-						completed={true}
-						title="What term do economists use to mean 'all other factors are unchanged'?"
-						inputType='radio'
-						options={[
-							'carpe diem',
-							'ceteris paribus',
-							'lorem ipsum'
-						]}
 						/>,
 					]}
 				/>,

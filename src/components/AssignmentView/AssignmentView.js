@@ -109,7 +109,7 @@ class AssignmentView extends Component {
     <Subheader>Completed</Subheader>
       {
         this.props.quizzes.map(function(q, index){
-        return  <ListItem style={{display:q.props.completed?'':'none'}}
+        return  <div style={{display:q.props.completed?'':'none'}}><ListItem
                   key={index}
                   nestedItems={gatherNested(q)}
                   innerDivStyle={{paddingRight: '16px'}}
@@ -126,7 +126,7 @@ class AssignmentView extends Component {
                     style={{height: 7, borderRadius: 3, backgroundColor: 'rgba(200,50,10,.7)'}}/>
                   </ToolbarGroup>
                   </Toolbar>
-                </ListItem>
+                </ListItem></div>
       })
     }
     </List>
