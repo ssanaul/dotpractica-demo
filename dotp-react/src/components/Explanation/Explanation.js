@@ -21,25 +21,13 @@ class Explanation extends Component {
 			toolbarText : {
 				fontSize: '12px',
 			},
-			customTextarea : {
-				width: '100%',
-				maxWidth: '100%',
-				minWidth: '100%',
-				height: '100%',
-				minHeight: 100,
-				border: 'none',
-				borderRight: '2px solid rgba(200,200,200,.5)',
-				borderBottom: '2px solid rgba(200,200,200,.5)',
-				outline: 'none',
-				overflow: 'auto',
-			},
 			nodeList : {
 				display: 'inline',
 				padding: 5,
 				marginLeft: 5,
 			},
-			bigTextarea: {
-				fontSize: '24px',
+			customTextarea: {
+				fontSize: '18px',
 				width: '100%',
 				maxWidth: '100%',
 				minWidth: '100%',
@@ -58,7 +46,7 @@ class Explanation extends Component {
 				</div>
 				<div className="row">
 					<div className="col-sm-12">
-						<textarea style={styles.bigTextarea}>
+						<textarea style={styles.customTextarea}>
 						</textarea>
 					</div>
 				</div>

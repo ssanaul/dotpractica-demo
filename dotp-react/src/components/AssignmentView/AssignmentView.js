@@ -6,8 +6,10 @@ import LinearProgress from 'material-ui/LinearProgress';
 import {Toolbar, ToolbarTitle, ToolbarGroup} from 'material-ui/Toolbar';
 import {Paper} from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 
 class AssignmentView extends Component {
   constructor(props){
@@ -16,6 +18,10 @@ class AssignmentView extends Component {
     this.state = {
       assignmentIsDisplayed: false,
       selectedQuiz: null,
+      values: {
+        0: 80,
+        1: 100
+      }
     }
 
     this.setSelected = this.setSelected.bind(this);
@@ -69,9 +75,38 @@ class AssignmentView extends Component {
       assignmentIsDisplayed: false,
       selectedQuiz: null,
     });
+    var getValue = (index) => {
+      return this.state.values[index];
+    }
   return ( <div>
     <Paper style={{display: this.state.assignmentIsDisplayed?'none':''}}>
+    <RaisedButton style={{float: 'right'}} label={<span>Sort by
+    <Icon name="caret" style={{marginLeft: 5, marginTop: 10}} fitted/></span>}/>
     <List>
+      <Subheader>Open</Subheader>
+      <ListItem
+          key={2}
+          innerDivStyle={{paddingRight: '16px'}}
+          onClick={()=>setSelected(2)}>
+          <Toolbar style={styles.toolbar}>
+          <ToolbarGroup firstChild={true}>
+            <ToolbarTitle
+              style={styles.toolbarTitle}
+              text='Market Equilibrium'
+            />
+            <span style={{marginTop: 4, marginLeft: 20,
+              fontSize: '12px', color: 'rgba(200,50,10,.7)'}}>
+            DUE TUESDAY 11/7
+            </span>
+          </ToolbarGroup>
+          <ToolbarGroup lastChild={true} style={{width: 420, marginRight: 50}}>
+            <LinearProgress mode='determinate' value={40} style={{height: 7, borderRadius: 3}}/>
+          </ToolbarGroup>
+          </Toolbar>
+        </ListItem>
+      </List>
+    <List>
+    <Subheader>Completed</Subheader>
       {
         this.props.quizzes.map(function(q, index){
         return  <ListItem
@@ -85,10 +120,10 @@ class AssignmentView extends Component {
                       style={styles.toolbarTitle}
                       text={q.props.title}
                     />
-                    {/*<FlatButton label="Open" labelStyle={{color: 'white'}} backgroundColor="rgba(50, 175, 150, .9)"/>*/}
                   </ToolbarGroup>
                   <ToolbarGroup lastChild={true} style={{width: 420, marginRight: 50}}>
-                    <LinearProgress mode='determinate' value={30} style={{height: 7, borderRadius: 3}}/>
+                    <LinearProgress mode='determinate' color='green' value={getValue(q.props.value)}
+                    style={{height: 7, borderRadius: 3, backgroundColor: 'rgba(200,50,10,.7)'}}/>
                   </ToolbarGroup>
                   </Toolbar>
                 </ListItem>
@@ -97,9 +132,15 @@ class AssignmentView extends Component {
     </List>
     </Paper>
       <div style={{display: this.state.assignmentIsDisplayed?'':'none'}}>
-      <FlatButton style={{borderBottom: '1px solid rgba(0,0,0,.3)'}} label="Go back"
-      icon={<Icon name="arrow left" size="small" fitted/>}
-      onClick={displayAll}/>
+      <Toolbar style={{height: 40, backgroundColor: 'rgba(250,250,250,.9)',
+      border: '1px solid rgba(0,0,0,.01)', borderRadius: 3, marginTop: 5}}>
+        <ToolbarGroup firstChild={true}>
+          <RaisedButton label="Go back" style={{marginLeft: 5}}
+          icon={<Icon name="arrow left" size="small" fitted/>}
+          onClick={displayAll}/>
+          <RaisedButton label="See feedback" style={{marginLeft: 5}}/>
+        </ToolbarGroup>
+      </Toolbar>
       {this.props.displays[this.state.selectedQuiz]}
       </div>
   </div> ); } } export default AssignmentView;

@@ -19,7 +19,7 @@ class ModuleUmbrella extends Component {
   }
   render() {
 const styles = {
-  bigTextarea: {
+  umbrellaTextarea: {
     fontSize: '24px',
     width: '100%',
     maxWidth: '100%',
@@ -104,7 +104,7 @@ var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.current
         <div className="col-md-8">
           <div style={styles.umbrellaWrapper}>
             <textarea onInput={updateUmbrellaValue} value={this.state.umbrellaValue}
-            style={styles.bigTextarea} placeholder="Your inference here..."/>
+            style={styles.umbrellaTextarea} placeholder="Your inference here..."/>
             <FlatButton label="Submit" backgroundColor='rgba(50, 175, 150, .9)'
             style={styles.submitButton} onClick={handleSubmit}/>
           </div>

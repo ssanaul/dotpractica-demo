@@ -10,7 +10,7 @@ class Assessment extends Component {
   render() {
   const styles = {
     quizbar : {
-      marginTop: 10,
+      marginTop: 5,
       backgroundColor: 'rgba(0, 10, 20, .8)',
       textAlign: 'center'
     },

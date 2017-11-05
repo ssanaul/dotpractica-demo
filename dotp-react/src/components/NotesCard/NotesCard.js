@@ -16,7 +16,9 @@ class NotesCard extends Component { render() {
       borderLeft: 'none',
       borderRight: 'none',
       outline: 'none',
-      marginBottom: 5,
+      marginBottom: 0,
+      paddingBottom: 0,
+      borderBottom: 'none',
     },
     toolbar: {
       height: 25,
