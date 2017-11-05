@@ -20,6 +20,7 @@ class App extends Component {
 					problems={[
 						<Problem key='a'
 						title='Why do students usually benefit from studying in groups?'
+						inputType='umbrella'
 					/>,
 						<Problem key='b'
 						title="You have three options on how to spend your Saturday afternoon: go out with friends, watch a movie, or wash your car. Your opportunity cost of washing your car would be:"
@@ -42,7 +43,7 @@ class App extends Component {
 						]}
 						/>,
 						<Problem key='d'
-						title="Suppose you and your roommate have the following agreement when it comes to cleaning your apartment: each person washes her or his own dishes after each meal. The principle of trade you just learned tells you that it would be more efficient if:"
+						title="Suppose you and your roommate have the following agreement when it comes to cleaning your apartment: each person washes her or his own dishes after each meal. The principle of trade tells you that it would be more efficient if:"
 						inputType='radio'
 						options={[
 							'both of you wash your own dishes after each meal',
@@ -51,20 +52,6 @@ class App extends Component {
 							'one of you wash all the dishes while the other does a different chore'
 						]}
 						/>,
-					]}
-				/>,<Assessment
-					key='1'
-					title='Economic Models and Production Possibilities'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
-					]}
-				/>,<Assessment
-					key='2'
-					title='Trade and Comparative Advantage'
-					problems={[
-						<Problem key='a' title='Problem 1a'/>,
-						<Problem key='b' title='Problem 1b'/>,
 					]}
 				/>
 			],

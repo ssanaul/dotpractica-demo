@@ -25,7 +25,7 @@ class Display extends Component {
 
       		<div className="col-md-5">
             <Toolbar style={{marginTop: 20, border: 'thin solid rgba(0,0,0,.1)'}}>
-              <ToolbarTitle text={<div><Icon name='sitemap'/>Dots</div>} style={{width: '100%', margin: 'auto',
+              <ToolbarTitle text={<div><Icon name='share alternate'/>Dots</div>} style={{width: '100%', margin: 'auto',
               textAlign: 'center', fontSize: '24px'}}/>
             </Toolbar>
       			{/*

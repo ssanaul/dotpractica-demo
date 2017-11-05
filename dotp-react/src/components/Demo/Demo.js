@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Image, Modal, Icon } from 'semantic-ui-react'
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import { Icon } from 'semantic-ui-react'
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import Divider from 'material-ui/Divider';
+
 import Home from '../Home/Home';
 import Display from '../Display/Display';
 import AssignmentView from '../AssignmentView/AssignmentView';
+import Dots from '../Dots/Dots';
+import Syllabus from '../Syllabus/Syllabus';
+import Gradebook from '../Gradebook/Gradebook';
 
 class Demo extends Component {
   constructor(props){
@@ -14,12 +21,20 @@ class Demo extends Component {
     this.state = {
       demoModalOpen: true,
       componentDisplayed: 'home',
+      classChooserIsOpen: false,
+      anchorEl: null,
     }
   }
   handleDemoModalClose = () => this.setState({demoModalOpen: false});
-  handleChange = (value) => {
-    this.setState({componentDisplayed: value});
+  handleChange = (value) => this.setState({componentDisplayed: value});
+  handleTouchTapClassChooser = (event) => {
+    event.preventDefault();
+    this.setState({
+      classChooserIsOpen: !this.state.classChooserIsOpen,
+      anchorEl: event.currentTarget,
+    });
   };
+  handleRequestClose = () => this.setState({classChooserIsOpen: false});
   render() {
   const styles = {
     modal: {
@@ -44,6 +59,11 @@ class Demo extends Component {
     inkBar: {
       backgroundColor: 'rgb(50, 175, 150)',
     },
+    classChooserIcon: {
+      cursor: 'pointer',
+      marginBottom: 15,
+      marginRight: 15,
+    }
   }
   return ( <div>
       <AppBar
@@ -64,10 +84,28 @@ class Demo extends Component {
           </Tab>
         </Tabs>
       }
-      iconElementLeft={<span style={{marginRight: 20}}>
-        <Icon name='content' size='big' style={{marginBottom: 15, marginRight: 15}}/>
-        <h1 style={{display:'inline'}}>Microeconomics</h1>
-      </span>}
+      iconElementLeft={
+        <span style={{marginRight: 20}}>
+          <Icon
+            name='content'
+            size='big'
+            style={styles.classChooserIcon}
+            onClick={this.handleTouchTapClassChooser}/>
+          <h1 style={{display:'inline'}}>Microeconomics</h1>
+          <Popover
+            open={this.state.classChooserIsOpen}
+            anchorEl={this.state.anchorEl}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu>
+              <MenuItem disabled={true} style={{color: 'black'}} primaryText='Classes:'/>
+              <Divider/>
+              <MenuItem primaryText='History'/>
+              <MenuItem primaryText='Philosophy'/>
+              <MenuItem primaryText='Physics'/>
+            </Menu>
+          </Popover>
+        </span>}
       iconElementRight={
         <img alt="dotp-logo" src='dotp.PNG' width={33} height={33}/>
       }
@@ -75,7 +113,9 @@ class Demo extends Component {
 
       {this.state.componentDisplayed==='home'?<Home quizzes={this.props.quizzes}/>:''}
       {this.state.componentDisplayed==='assignments'?<AssignmentView quizzes={this.props.quizzes}/>:''}
-      {this.state.componentDisplayed==='dots'?<div/>:''}
+      {this.state.componentDisplayed==='dots'?<Dots/>:''}
+      {this.state.componentDisplayed==='syllabus'?<Syllabus/>:''}
+      {this.state.componentDisplayed==='grades'?<Gradebook/>:''}
 
 
 

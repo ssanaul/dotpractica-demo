@@ -6,6 +6,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 import {Toolbar, ToolbarTitle, ToolbarGroup} from 'material-ui/Toolbar';
 import {Paper} from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
+import Avatar from 'material-ui/Avatar';
 
 class AssignmentView extends Component {
   constructor(props){
@@ -14,13 +15,38 @@ class AssignmentView extends Component {
     this.state = {
     }
   }
+
   render() {
+    const styles = {
+      umbrellaIcon: {
+        width: '100%',
+        margin: 'auto',
+      },
+      umbrellaAvatar: {
+        marginLeft: 5,
+        backgroundColor: 'rgba(20, 50, 100, .7)',
+      },
+      toolbarTitle: {
+        color: 'rgb(10, 20, 20)',
+        marginLeft: 25,
+        paddingRight: 0,
+      },
+      toolbar: {
+        backgroundColor: 'rgba(10, 20, 20, .1)',
+        borderRadius: 2
+      },
+
+    }
     var gatherNested = (q) => {
       let gathered = [];
       q.props.problems.forEach(function(p){
         gathered.push(<ListItem>
-            <Icon name="chevron right"/>
+            <Icon name="chevron circle right" size="medium"/>
             {p.props.title}
+            {p.props.inputType==="umbrella"?<Avatar children={
+              <Icon name="umbrella" style={styles.umbrellaIcon}/>}
+              style={styles.umbrellaAvatar}
+              />:''}
           </ListItem>);
       });
       return gathered;
@@ -33,17 +59,16 @@ class AssignmentView extends Component {
         return  <ListItem
                   nestedItems={gatherNested(q)}
                   innerDivStyle={{paddingRight: '16px'}}>
-                  <Toolbar style={{backgroundColor: 'rgba(10, 20, 20, .1)', borderRadius: 2}}>
+                  <Toolbar style={styles.toolbar}>
                   <ToolbarGroup firstChild={true}>
                     <ToolbarTitle
-                      style={{color: 'rgb(10, 20, 20)', marginLeft: 25}}
+                      style={styles.toolbarTitle}
                       text={q.props.title}
                     />
-                  </ToolbarGroup>
-                  <ToolbarGroup lastChild={true} style={{width: 333, marginRight: 50}}>
                     <FlatButton label="Open" labelStyle={{color: 'white'}} backgroundColor="rgba(50, 175, 150, .9)"/>
-                    <span style={{fontSize: '12px'}}>Completion:</span>
-                    <LinearProgress mode='determinate' value={30}/>
+                  </ToolbarGroup>
+                  <ToolbarGroup lastChild={true} style={{width: 420, marginRight: 50}}>
+                    <LinearProgress mode='determinate' value={30} style={{height: 7, borderRadius: 3}}/>
                   </ToolbarGroup>
                   </Toolbar>
                 </ListItem>
