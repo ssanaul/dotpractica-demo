@@ -39,7 +39,7 @@ class Demo extends Component {
   render() {
   const styles = {
     modal: {
-      height: 400,
+      height: 350,
     },
     navBar: {
       backgroundColor: 'rgb(20, 70, 70)',
@@ -73,7 +73,7 @@ class Demo extends Component {
         <Tabs style={styles.tabs}
           inkBarStyle={styles.inkBar}
           onChange={this.handleChange}>
-          <Tab label="Home" style={styles.tab} value="home" disableTouchRipple={true}>
+          <Tab label="Dashboard" style={styles.tab} value="home" disableTouchRipple={true}>
           </Tab>
           <Tab label="Assignments" style={styles.tab} value="assignments" disableTouchRipple={true}>
           </Tab>
@@ -141,18 +141,15 @@ class Demo extends Component {
       <Image wrapped size='medium' src='dotp.PNG' />
       <Modal.Description>
         <Header>DotPractica streamlines the formative assessment and discussion
-         process for high schools using state-of-the-art cloud technology and
-         powerful data visualization tools</Header>
+         process for schools.</Header>
         <p>During this demo, you can engage the app as both a student and an educator
         participating in an introductory economics course.</p>
-        <p>Activities as a student include participation in a discussion, completing
-        a quiz, receving feedback from a teacher, and studying past assignments.</p>
-        <p>As an educator, you will be able to review student participation in the
-        discussion, provide feedback on assignments, review student performance on
-        assignments, and gain insight on student comprehension.</p>
         <p>Learn more about our mission
         at <a target="_blank" rel="noopener noreferrer" href="http://dotpractica.com">dotpractica.com</a>
         </p>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <Button
           style={styles.beginButton}

@@ -109,7 +109,7 @@ class AssignmentView extends Component {
     <Subheader>Completed</Subheader>
       {
         this.props.quizzes.map(function(q, index){
-        return  <ListItem
+        return  <ListItem style={{display:q.props.completed?'':'none'}}
                   key={index}
                   nestedItems={gatherNested(q)}
                   innerDivStyle={{paddingRight: '16px'}}
@@ -138,7 +138,7 @@ class AssignmentView extends Component {
           <RaisedButton label="Go back" style={{marginLeft: 5}}
           icon={<Icon name="arrow left" size="small" fitted/>}
           onClick={displayAll}/>
-          <RaisedButton label="See feedback" style={{marginLeft: 5}}/>
+          {/*<RaisedButton label="Show feedback" style={{marginLeft: 5}}/>*/}
         </ToolbarGroup>
       </Toolbar>
       {this.props.displays[this.state.selectedQuiz]}

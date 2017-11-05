@@ -24,10 +24,17 @@ class Display extends Component {
           </Toolbar>*/}
 
       		<div className="col-md-5">
+            {this.props.quiz.props.completed?
+              <Toolbar style={{marginTop: 5, backgroundColor: 'rgba(20, 70, 100, 1)', color: 'white', border: 'thin solid rgba(0,0,0,.1)'}}>
+                <ToolbarTitle text={<span>Feedback</span>} style={{width: '100%', margin: 'auto',
+                textAlign: 'center', fontSize: '24px'}}/>
+              </Toolbar>
+              :
             <Toolbar style={{marginTop: 5, backgroundColor: 'rgba(20, 70, 100, 1)', color: 'white', border: 'thin solid rgba(0,0,0,.1)'}}>
               <ToolbarTitle text={<span><Icon name='share alternate' size="small" circular/>Dots</span>} style={{width: '100%', margin: 'auto',
               textAlign: 'center', fontSize: '24px'}}/>
             </Toolbar>
+          }
       			{/*
       				this.props.quizzes.map(function(q){
       					return <ListItem

@@ -11,9 +11,12 @@ class Solution extends Component {
       <div style={{padding: 10}}>
     		<Answer
           inputType={this.props.inputType}
-          options={this.props.options}/>
+          options={this.props.options}
+          completed={this.props.completed}
+          answer={this.props.answer}/>
 
-        <Explanation inputType={this.props.inputType}/>
+        <Explanation inputType={this.props.inputType}
+        completed={this.props.completed}/>
       </div>
       </div>
     );
