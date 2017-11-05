@@ -7,7 +7,16 @@ import {Toolbar, ToolbarTitle} from 'material-ui/Toolbar';
 import {Icon} from 'semantic-ui-react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
-class Dots extends Component { render() {
+class Dots extends Component {
+constructor(props){
+  super(props);
+
+  this.state = {
+
+  }
+}
+  render() {
+
 
   return ( <div className="row">
 

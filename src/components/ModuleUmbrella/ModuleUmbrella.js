@@ -68,6 +68,10 @@ const styles = {
 
 var handleSubmit = (event) => this.setState({submissionReceived: true});
 var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.currentTarget.value});
+var setValue = (event) => {
+  this.setState({umbrellaValue: 'When there is a shortage of a good, we can expect the price to increase'});
+  console.log('hey');
+}
 
   return ( <div>
 
@@ -168,7 +172,7 @@ disableTouchRipple={true}/>
 
 <Divider/>
 
-<ListItem leftAvatar={<Avatar size={20} style={{marginTop: 8}} backgroundColor='rgba(50, 175, 150, .9)' disabled
+<ListItem onClick={setValue} leftAvatar={<Avatar size={20} style={{marginTop: 8}} backgroundColor='rgba(50, 175, 150, .9)'
 icon={<Icon name="radio" circular fitted/>}/>}
 primaryText={<div style={{marginBottom: 10}}>
 <span>When there is a shortage of a good, we expect the price will: </span>
