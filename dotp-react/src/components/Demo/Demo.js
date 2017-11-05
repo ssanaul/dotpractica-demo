@@ -23,6 +23,7 @@ class Demo extends Component {
       componentDisplayed: 'home',
       classChooserIsOpen: false,
       anchorEl: null,
+      otherView: 'educator',
     }
   }
   handleDemoModalClose = () => this.setState({demoModalOpen: false});
@@ -103,6 +104,8 @@ class Demo extends Component {
               <MenuItem primaryText='History'/>
               <MenuItem primaryText='Philosophy'/>
               <MenuItem primaryText='Physics'/>
+              <Divider/>
+              <MenuItem primaryText={<i>Switch to {this.state.otherView} view</i>}/>
             </Menu>
           </Popover>
         </span>}

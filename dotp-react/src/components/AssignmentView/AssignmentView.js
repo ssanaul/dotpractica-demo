@@ -48,7 +48,7 @@ class AssignmentView extends Component {
       let gathered = [];
       q.props.problems.forEach(function(p){
         gathered.push(<ListItem>
-            <Icon name="chevron circle right" size="medium"/>
+            <Icon name="selected radio" size="small" inverted/>
             {p.props.title}
             {p.props.inputType==="umbrella"?<span>
             <Avatar children={

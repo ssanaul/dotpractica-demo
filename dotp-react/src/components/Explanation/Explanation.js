@@ -51,7 +51,7 @@ class Explanation extends Component {
 		}
     return (
       <div>
-			<h4>Explain:</h4>
+			{this.props.inputType==='radio'?<h4>Explain:</h4>:''}
 				<div className="row">
 					<div className="col-sm-12">
 					</div>
@@ -65,7 +65,6 @@ class Explanation extends Component {
 				<div className="row">
 				<Paper zIndex={1}>
 					<div className="col-sm-12">
-						Dots used:
 						<List>
 								<Chip/>
 						</List>

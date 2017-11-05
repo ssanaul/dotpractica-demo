@@ -13,7 +13,7 @@ class Solution extends Component {
           inputType={this.props.inputType}
           options={this.props.options}/>
 
-        <Explanation/>
+        <Explanation inputType={this.props.inputType}/>
       </div>
       </div>
     );

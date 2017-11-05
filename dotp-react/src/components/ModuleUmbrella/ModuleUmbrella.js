@@ -6,6 +6,7 @@ import {Icon} from 'semantic-ui-react';
 import Avatar from 'material-ui/Avatar';
 import FlatButton from 'material-ui/FlatButton';
 import Badge from 'material-ui/Badge';
+import CircularProgress from 'material-ui/CircularProgress';
 
 class ModuleUmbrella extends Component {
   constructor(props){
@@ -53,7 +54,7 @@ const styles = {
     color: 'yellow',
   },
   receivingText:{
-    color: 'rgba(0,0,0,.8)',
+    color: 'rgba(0,100,150,.7)',
   },
   receivedIcon: {
     color: 'white',
@@ -92,10 +93,7 @@ var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.current
       </span>
       :
       <span style={styles.receivingText}>
-        Receiving submissions...<Avatar style={styles.receivingAvatar}
-        backgroundColor='rgba(0,0,0,.3)' size={30} children={
-          <Icon style={styles.receivingIcon} name="idea" size="large" fitted/>
-        }/>
+        Receiving submissions...<CircularProgress size={15} thickness={5}/>
         </span>
       }
       </div>
