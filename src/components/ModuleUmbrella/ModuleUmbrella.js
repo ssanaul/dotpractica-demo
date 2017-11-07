@@ -70,7 +70,6 @@ var handleSubmit = (event) => this.setState({submissionReceived: true});
 var updateUmbrellaValue = (event) => this.setState({umbrellaValue: event.currentTarget.value});
 var setValue = (event) => {
   this.setState({umbrellaValue: 'When there is a shortage of a good, we can expect the price to increase'});
-  console.log('hey');
 }
 
   return ( <div>
